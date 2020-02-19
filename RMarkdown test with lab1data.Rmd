@@ -1,0 +1,40 @@
+---
+title: "Test with my own data from 206"
+author: "Juliette Lemoine"
+date: "19/02/2020"
+output: html_document
+---
+
+setwd('~/Documents/GitHub/gitTest')   #Change '/home/my_dir' to the directory where you have saved your data files
+getwd()                 #check to see if your working directory is correct.
+
+## Lab 01 ##
+#My lab 1 commands
+
+Let's first load the data
+```{r}
+lab1<-read.csv("lab1_19.csv")   #Read in the data
+lab1                           #view data
+head(lab1)                      #view the first few lines of data
+```
+
+Data summary
+
+```{r}
+summary(lab1$fecundity)
+mean(lab1$fecundity)
+var(lab1$fecundity)
+min(lab1$fecundity)
+max(lab1$fecundity)
+length(lab1$fecundity)
+
+(max(lab1$fecundity)-min(lab1$fecundity))
+```
+
+Histogram of Fecundity in Female Crickets
+
+```{r}
+bins=seq(0,1200,length=20) 
+hist(lab1$fecundity, bins, xlab= "Mass of ovaries (mg)", ylab= "Number of Females", main= "Fecundity of Female Sand Field Crickets")
+```
+
